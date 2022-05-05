@@ -114,7 +114,7 @@ func generateRating() {
 			if text := strings.Split(msg, " "); len(text) >= 5 {
 				vehRating = 5.0
 				vehResult.feedbackTotal++
-				for word := range text {
+				for _, word := range text {
 					s := strings.Trim(strings.ToLower(word), " ,.,!,?,\t,\n,\r")
 					switch s {
 					case "pleasure", "impressed", "wonderful", "fantastic", "splendid":
