@@ -104,11 +104,11 @@ func readJSONFile() Values {
 }
 
 func generateRating() {
-	var vehResult feedbackResult
-	var vehRating rating
 	f := readJSONFile()
 	for _, v := range f.Models {
 		for _, msg := range v.feedback {
+			var vehResult feedbackResult
+			var vehRating rating
 			if text := strings.Split(msg, " "); len(text) >= 5 {
 				vehRating = 5.0
 				vehResult.feedbackTotal++
